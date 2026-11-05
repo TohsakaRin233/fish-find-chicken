@@ -17,7 +17,17 @@
   "scripts": {
     "check": "node bin/fish.mjs --check"
   },
-  "keywords": ["reverse-image-search", "coser", "google-lens", "saucenao", "onebot", "qq"],
+  "keywords": [
+    "reverse-image-search",
+    "coser",
+    "google-lens",
+    "saucenao",
+    "onebot",
+    "qq"
+  ],
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {},
+  "optionalDependencies": {
+    "ssh2": "^1.15.0"
+  }
 }

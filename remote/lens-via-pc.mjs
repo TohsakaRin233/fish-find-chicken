@@ -26,7 +26,15 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { Client } from 'ssh2';
+
+// ssh2 是唯一的可选依赖（远程借壳才需要），没装时给明确提示
+let Client;
+try {
+  ({ Client } = await import('ssh2'));
+} catch {
+  console.log('缺依赖 ssh2：远程借壳需要先 npm i ssh2');
+  process.exit(1);
+}
 
 const HOST = process.env.FISH_PC_HOST;
 const USER = process.env.FISH_PC_USER;
